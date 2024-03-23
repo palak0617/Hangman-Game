@@ -80,3 +80,70 @@ for (let i = 0; i < myword.length; i++) {
 }
 
 }
+const main=async(keyVal)=>{
+    audio.play();
+        console.log("my Key click",keyVal);
+        // Checking The KeyVal
+        const present=getWord.includes(keyVal);
+        let idx=getWord.indexOf(keyVal);;
+            document.getElementsByClassName(keyVal.toUpperCase())[0].style.color='red';
+        let newPromise =  
+                new Promise(function (resolve, reject) { 
+                setTimeout(function () { 
+                    resolve(document.getElementsByClassName(keyVal.toUpperCase())[0].style.color="blue"); 
+                }, 100); 
+            }); 
+            let result = await newPromise; 
+   
+        
+       
+        console.log("my Present Value is",present);
+        if (count>=getMaxAttempts) {
+            console.log("You Loss Click To Replay The Game");
+            loss.play();
+            setTimeout(() => {
+                document.querySelector('.container').classList.add('whenpopup')
+            }, 300);
+            showpopup.style.visibility='visible'
+
+                trofficScore.innerHTML=0;
+                getRandom();
+        }
+        else if (present) {
+            // Element is Present In My Value
+            // firstly Incrementing The Count
+            corrNum++;
+            correct.play()
+            console.log("Element Present my keyval  is:",keyVal,"and Index is:",idx);
+            document.querySelector(`.${keyVal}-myinp-${idx}`).value=keyVal;
+
+            let regex = new RegExp(keyVal);
+            getWord=getWord.replace(regex,'_')
+            console.log("my Get Word After Replacing",getWord);
+            if (corrNum==getWord.length && count<getMaxAttempts) {
+                // my String is Empty 
+                console.log("You Empty");
+                success.play()
+                
+                let innerScoreText=Number(trofficScore.innerHTML)
+                console.log(innerScoreText);
+                if (innerScoreText==winScore) {
+                    document.querySelector('.popup-message').innerHTML=" "
+                    document.querySelector('.popup-message').innerHTML="You Won"
+                    document.querySelector('.showpopup').style.visibility='visible'
+                    document.querySelector('.container').classList.add('whenpopup');
+                }
+                trofficScore.innerHTML=++innerScoreText;
+
+                getRandom();
+            }
+        }
+        else{
+            // Element Is Not Present in my Value
+            console.log("Element not Present");
+            count++;
+            wrong.play()
+            constructHangMan();
+
+        }
+}
