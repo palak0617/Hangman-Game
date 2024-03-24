@@ -1,4 +1,17 @@
 console.log("Index js Is Running");
+Audio("../static/keyPress.mp3")
+var success=new Audio("../static/success.mp3")
+var loss=new Audio("../static/loss.mp3")
+var wrong=new Audio("../static/wrong.mp3")
+var correct=new Audio("../static/correct.mp3")
+let myinp=document.getElementsByClassName('myinp')
+let keys=document.getElementsByClassName('key')
+let mybox=document.querySelector('.mybox')
+
+let trofficScore=document.querySelector('.troffie-score')
+let upperBarDivs=document.querySelector('.upper-2-bar-mydiv')
+let showpopup=document.querySelector('.showpopup')
+var size = json.length-1;
 let json=[
     {"vegetable":[
         "Carrot",
@@ -146,4 +159,13 @@ const main=async(keyVal)=>{
             constructHangMan();
 
         }
+}
+for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const keyVal=key.innerHTML.toLowerCase();
+    key.addEventListener('click',(e)=>{
+    main(keyVal)
+        
+    })
+    
 }
