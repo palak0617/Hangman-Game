@@ -1,17 +1,4 @@
 console.log("Index js Is Running");
-Audio("../static/keyPress.mp3")
-var success=new Audio("../static/success.mp3")
-var loss=new Audio("../static/loss.mp3")
-var wrong=new Audio("../static/wrong.mp3")
-var correct=new Audio("../static/correct.mp3")
-let myinp=document.getElementsByClassName('myinp')
-let keys=document.getElementsByClassName('key')
-let mybox=document.querySelector('.mybox')
-
-let trofficScore=document.querySelector('.troffie-score')
-let upperBarDivs=document.querySelector('.upper-2-bar-mydiv')
-let showpopup=document.querySelector('.showpopup')
-var size = json.length-1;
 let json=[
     {"vegetable":[
         "Carrot",
@@ -63,6 +50,32 @@ let json=[
         "Swan"
     ]}
 ]
+var audio=new Audio("../static/keyPress.mp3")
+var success=new Audio("../static/success.mp3")
+var loss=new Audio("../static/loss.mp3")
+var wrong=new Audio("../static/wrong.mp3")
+var correct=new Audio("../static/correct.mp3")
+let myinp=document.getElementsByClassName('myinp')
+let keys=document.getElementsByClassName('key')
+let mybox=document.querySelector('.mybox')
+
+let trofficScore=document.querySelector('.troffie-score')
+let upperBarDivs=document.querySelector('.upper-2-bar-mydiv')
+let showpopup=document.querySelector('.showpopup')
+var size = json.length-1;
+// Set The Win Score That After Maximum Attempts its Wins
+var winScore=5;
+console.log("My Traffic Score Inner html is:::::::",typeof Number(trofficScore.innerHTML)+3);
+//getting Random Index
+var getWord="";
+var count=0;
+var getMaxAttempts=6;
+var corrNum=0;
+var showHangVal=1;
+const constructHangMan=()=>{
+    console.log("Construct HangMan is Running");
+    document.querySelector(`.hang-${showHangVal++}`).style.visibility='visible';
+}
 const getRandom=()=>{
     // Firstly Removing all The Input Elements
     document.querySelectorAll('.myinp').forEach(e => e.remove());
@@ -93,6 +106,17 @@ for (let i = 0; i < myword.length; i++) {
 }
 
 }
+window.onload=getRandom
+document.addEventListener('keypress',(e)=>{
+    console.log(e.key);
+    const keyVal=e.key;
+    if(keyVal.charCodeAt(0)>=97 && keyVal.charCodeAt(0)<=122){
+        main(keyVal);
+    }
+    else{
+        wrong.play();
+    }
+})
 const main=async(keyVal)=>{
     audio.play();
         console.log("my Key click",keyVal);
