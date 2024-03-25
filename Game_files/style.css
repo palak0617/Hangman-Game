@@ -212,24 +212,37 @@
 }
 
 /* for the start page */
+
+.bd1{
+    background-color: black;
+}
+.vid1{
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    
+}
+
 .anc1{
     z-index: 10;
     text-decoration: none;
     font-family: fantasy;
 }
 .bd1 .arcader{
+    z-index: 9;
     position: absolute;
-    top: 10vh;
+    top: 6vh;
     left: 32vw;
-    height: 45vw;
+    height: 50vw;
     width: 35vw;
     
 }
-.bd1{
-    background-image: url(../static/game.png);
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-}
+
 .start1{
    
     /* border: 5px solid black; */
@@ -246,10 +259,10 @@
     
   align-items: center;
   background-color: #fee6e3;
-  border: 2px solid #111;
+  border: 2px solid #09e3fb;
   border-radius: 8px;
   box-sizing: border-box;
-  color: #111;
+  color: black;
   cursor: pointer;
   display: flex;
   font-family: Inter,sans-serif;
@@ -268,7 +281,7 @@
 }
 
 .button-56:after {
-  background-color: #111;
+  background-color: #09e3fb;
   border-radius: 8px;
   content: "";
   display: block;
