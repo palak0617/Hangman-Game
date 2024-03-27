@@ -12,6 +12,7 @@ function createWindows() {
             contextIsolation:false,
             enableRemoteModule:true
         },
+        autoHideMenuBar:true,
         resizable:false,
         icon:__dirname +'./static/Hangman-icon.png'
        
