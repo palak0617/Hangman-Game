@@ -13,4 +13,15 @@
     <img src="../static/gamerarc.jpg" alt="" class="arcader">
     <video autoplay src="../static/retro-boy-late-night-arcade-moewalls-com.mp4" class="vid1"></video>
 </body>
+<script>
+    const bgSound=new Audio("../static/bgSound.mp3");
+    bgSound.play();
+    let clickSound=new Audio("../static/clickBut.mp3")
+    console.log("Sound Playing ");
+    document.getElementsByClassName("anc1")[0].addEventListener('mouseover',()=>{
+console.log("Hovering On The Mouse");
+clickSound.play()
+    })
+
+</script>
 </html>
