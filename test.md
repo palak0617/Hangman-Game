@@ -1,0 +1,1 @@
+ I have tested the game thoroughly and it was quite interesting to play with user friendly interface but there was a small problem in the game while playing the game when i was giving wrong inputs the game should get over after the hangman was drawn fully but the game gets over after an extra try, So kindly look over to this small problem .
