@@ -12,7 +12,12 @@ In this version of the game the computer thinks of the word and it is upto the u
 # Snapshots
 
 
+
 # Instructions
+1.There are total 6 number of guesses to guess the word before the man hangs.
+2.The hint is being provided. For example : if the word is the animal,household material or etc.
+
+
 
 
 
