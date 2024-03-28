@@ -10,7 +10,7 @@ In this version of the game the computer thinks of the word and it is upto the u
 4. Sarthak Sharma - Tester - 2310991369
 
 # Snapshots
-
+![snapshot of the game](/static/snapshot.png)
 
 
 # Instructions
