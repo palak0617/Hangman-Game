@@ -7,7 +7,7 @@ In this version of the game the computer thinks of the word and it is upto the u
 1. Nakul Gupta - Developer - 2310990579
 2. Naman Bansal - Developer - 2310990580
 3. Palak Singla - Manager - 2310990593
-4. Sarthak Sharma - Tester
+4. Sarthak Sharma - Tester - 2310991369
 
 # Snapshots
 
