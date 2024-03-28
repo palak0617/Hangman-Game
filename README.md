@@ -19,7 +19,7 @@ In this version of the game the computer thinks of the word and it is upto the u
 
 2.The hint is being provided. For example : if the word is the animal,household material or etc.
 
-GO AHEAD,guess the word and enjoy the game!:smiley:
+GO AHEAD,guess the word and enjoy the game! 
 
 
 
