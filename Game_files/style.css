@@ -5,9 +5,13 @@
 *{
     margin: 0;
     padding: 0;
+    /* height: 100vh; */
+    /* width: 100vw; */
     font-family: myfont;
     font-weight: bold;
     letter-spacing: 1.2;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
 }
 
 .container{
@@ -16,6 +20,7 @@
     background-image: url('../static/bg.jpg');
     background-size: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .upper-bar{
   
@@ -155,7 +160,7 @@
 .hangman-lower img:nth-child(2){
     
     position: relative;
-    left: 185px;
+    left: 194px;
     top: 10px;
     visibility: hidden;
     

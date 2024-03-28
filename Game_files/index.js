@@ -19,7 +19,7 @@ let json=[
         "Dresser",
         "Couch",
         "Desk",
-        "TV stand",
+        "stand",
         "Bookshelf",
         "Lamp",
         "Mirror",
@@ -37,7 +37,7 @@ let json=[
     {"bird": [
         "Sparrow",
         "Robin",
-        "Blue Jay",
+        "BlueJay",
         "Cardinal",
         "Finch",
         "Parrot",
@@ -75,6 +75,7 @@ var showHangVal=1;
 const constructHangMan=()=>{
     console.log("Construct HangMan is Running");
     document.querySelector(`.hang-${showHangVal++}`).style.visibility='visible';
+    console.log("HangMan Constructed");
 }
 const getRandom=()=>{
     // Firstly Removing all The Input Elements
@@ -119,32 +120,35 @@ document.addEventListener('keypress',(e)=>{
 })
 const main=async(keyVal)=>{
     audio.play();
-        console.log("my Key click",keyVal);
-        // Checking The KeyVal
-        const present=getWord.includes(keyVal);
-        let idx=getWord.indexOf(keyVal);;
-            document.getElementsByClassName(keyVal.toUpperCase())[0].style.color='red';
-        let newPromise =  
-                new Promise(function (resolve, reject) { 
-                setTimeout(function () { 
-                    resolve(document.getElementsByClassName(keyVal.toUpperCase())[0].style.color="blue"); 
-                }, 100); 
-            }); 
-            let result = await newPromise; 
-   
-        
-       
-        console.log("my Present Value is",present);
-        if (count>=getMaxAttempts) {
+    console.log("my Key click",keyVal);
+    // Checking The KeyVal
+    const present=getWord.includes(keyVal);
+    let idx=getWord.indexOf(keyVal);;
+    document.getElementsByClassName(keyVal.toUpperCase())[0].style.color='red';
+    let newPromise =  
+    new Promise(function (resolve, reject) { 
+        setTimeout(function () { 
+            resolve(document.getElementsByClassName(keyVal.toUpperCase())[0].style.color="blue"); 
+        }, 100); 
+    }); 
+    let result = await newPromise; 
+    
+    
+    
+    console.log("my Present Value is",present);
+    if (count>=getMaxAttempts-1) {
+        console.log("Running max Attempts Condition");
+            constructHangMan();
             console.log("You Loss Click To Replay The Game");
             loss.play();
-            setTimeout(() => {
+            await setTimeout(() => {
+                
+                showpopup.style.visibility='visible'
                 document.querySelector('.container').classList.add('whenpopup')
-            }, 300);
-            showpopup.style.visibility='visible'
+            }, 500);
 
                 trofficScore.innerHTML=0;
-                getRandom();
+            //     getRandom();
         }
         else if (present) {
             // Element is Present In My Value
@@ -181,7 +185,7 @@ const main=async(keyVal)=>{
             count++;
             wrong.play()
             constructHangMan();
-
+            
         }
 }
 for (let i = 0; i < keys.length; i++) {

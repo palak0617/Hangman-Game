@@ -5,12 +5,23 @@
     <title>Hang Man Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bd1">
-    <div class="start1">
+<body style="overflow-x: hidden;overflow-y: hidden;" class="bd1">
+    <div style="overflow-x: hidden;overflow-y: hidden;" class="start1">
         <a href="index.html" class="anc1"><button class="button-56" role="button">START</button></a>
         
     </div>
     <img src="../static/gamerarc.jpg" alt="" class="arcader">
     <video autoplay src="../static/retro-boy-late-night-arcade-moewalls-com.mp4" class="vid1"></video>
 </body>
+<script>
+    const bgSound=new Audio("../static/bgSound.mp3");
+    bgSound.play();
+    let clickSound=new Audio("../static/clickBut.mp3")
+    console.log("Sound Playing ");
+    document.getElementsByClassName("anc1")[0].addEventListener('mouseover',()=>{
+console.log("Hovering On The Mouse");
+clickSound.play()
+    })
+
+</script>
 </html>
