@@ -71,6 +71,7 @@ var getWord="";
 var count=0;
 var getMaxAttempts=6;
 var corrNum=0;
+let varWord="";
 var showHangVal=1;
 const constructHangMan=()=>{
     console.log("Construct HangMan is Running");
@@ -94,6 +95,7 @@ const getRandom=()=>{
 console.log(getNinputs);
 let myword=json[val][Object.keys(json[val])][getNinputs]
 getWord=myword.toLowerCase();
+varWord=myword;
 console.log("my Word is My Word",myword);
 for (let i = 0; i < myword.length; i++) {
     const ch = myword[i];
@@ -146,7 +148,7 @@ const main=async(keyVal)=>{
                 showpopup.style.visibility='visible'
                 document.querySelector('.container').classList.add('whenpopup')
             }, 500);
-
+document.querySelector('.replay-popup').innerHTML=`Coorect Word is ${varWord}`
                 trofficScore.innerHTML=0;
             //     getRandom();
         }
