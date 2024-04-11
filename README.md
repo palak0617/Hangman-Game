@@ -21,9 +21,13 @@ In this version of the game the computer thinks of the word and it is upto the u
 
 # Instructions to download and run the game :
 1.First Install node.js . 
+
 2.Then use the command git clone to clone the files .
-3. Write the command npm install
+
+3. Write the command npm install .
+
 4. Then write npm run watch
+
 You are good to go and play the game afterwards! 
 
 
