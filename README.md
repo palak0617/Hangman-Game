@@ -4,10 +4,10 @@ Hangman is a guessing game for two or more players. One player thinks of a word,
 In this version of the game the computer thinks of the word and it is upto the user to guess the word!
 
 # Creators
-1. Nakul Gupta - Developer - 2310990579
-2. Naman Bansal - Developer - 2310990580
-3. Palak Singla - Manager - 2310990593
-4. Sarthak Sharma - Tester - 2310991369
+1. Nakul Gupta - Developer
+2. Naman Bansal - Developer 
+3. Palak Singla - Manager 
+4. Sarthak Sharma - Tester 
 
 # Snapshots
 ![snapshot of the game](/static/snapshot.png)
